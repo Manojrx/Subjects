@@ -14,7 +14,7 @@ export class SubjectsComponent {
   // subj: Subject<any> = new Subject(); // emits even not subscribed and emitted values are not pushed because not subscribed and changes to another value.
   // subj: Subject<any> = new ReplaySubject(2); // stores all previous value if depth not given if gave stores last indexes.
   // subj: Subject<any> = new BehaviorSubject(100); // we can set initial value and if emit any values it overrides the previous value. 
-  subj: Subject<any> = new AsyncSubject();
+  subj: Subject<any> = new AsyncSubject(); //async Subject only emits last value after complete method triggered.
   getData() {
     setTimeout(() => {
       this.subj.next(1);
@@ -31,7 +31,7 @@ export class SubjectsComponent {
   }
 
   Subscribe() {
-    this.subj.complete();
+    this.subj.complete(); //  only for async subject.
     this.subj.subscribe(res =>{
       this.array.push(res);
     })
