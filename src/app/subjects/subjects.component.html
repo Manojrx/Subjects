@@ -1,0 +1,18 @@
+<div class="flex flex-row w-full h-screen bg-zinc-400">
+
+    <div class="basis-6/12 justify-center flex h-full w-full flex-col">
+      <div class="basis-6/12 flex flex-col  h-full w-full justify-center items-center">
+        <button (click)="getData()"> GetData</button>
+      </div>
+      <div class="basis-6/12 flex flex-col  h-full w-full justify-center items-center">
+        <button (click)="Subscribe()"> Subscribe</button>
+      </div>
+    </div>
+  
+    <div class="basis-6/12 justify-center flex h-full w-full flex-col">
+      <div class=" flex flex-col  h-full w-full justify-center items-center">
+       <div *ngFor="let data of array">
+        {{data}}
+       </div>
+      </div>
+    </div>
